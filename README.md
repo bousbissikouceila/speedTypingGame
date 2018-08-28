@@ -12,10 +12,6 @@ Try it - [WordBeater Game](https://bousbissikouceila.github.io/speedTypingGame "
 
 ## Info
 
-### Author
-
-Kouceïla BOUSBISSI
-
 ### Version
 
 1.0.0
