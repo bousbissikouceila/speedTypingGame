@@ -1,18 +1,18 @@
 {
-  "name": "wordbeater",
-  "version": "1.0.0",
-  "description": "simple speed typing game with vanilla javascript ",
-  "main": "index.js",
-  "homepage": "https://bousbissikouceila.github.io/speedTypingGame",
-  "scripts": {
-    "deploy": "gh-pages -d dist"
-  },
-  "keywords": [
-    "Game"
-  ],
-  "author": "Kouceïla BOUSBISSI",
-  "license": "MIT",
-  "dependencies": {
-    "gh-pages": "^1.2.0"
-  }
+    "name": "wordbeater",
+    "version": "1.0.0",
+    "description": "simple speed typing game with vanilla javascript ",
+    "main": "index.js",
+    "homepage": "https://bousbissikouceila.github.io/speedTypingGame",
+    "scripts": {
+        "deploy": "gh-pages -d dist/"
+    },
+    "keywords": [
+        "Game"
+    ],
+    "author": "Kouceïla BOUSBISSI",
+    "license": "MIT",
+    "dependencies": {
+        "gh-pages": "^2.0.1"
+    }
 }
