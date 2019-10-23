@@ -30,7 +30,7 @@ seconds.innerHTML = currentLevel;
 highScore.innerHTML = score;
 
 // Words to play with
-const words = ['hat', 'coat', 'const', 'javascript', 'river', 'lucky', 'statue', 'joke', 'developer', 'establishment'];
+const words = ['hat', 'coat', 'const', 'javascript', 'river', 'lucky', 'statue', 'joke', 'developer', 'angular'];
 
 // Initilize Game
 function init() {
