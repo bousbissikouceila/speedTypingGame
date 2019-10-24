@@ -30,7 +30,7 @@ seconds.innerHTML = currentLevel;
 highScore.innerHTML = score;
 
 // Words to play with
-const word = ['coat', 'const', 'javascript', 'river', 'lucky', 'statue', 'joke', 'developer', 'angular', 'nightmare', 'application', 'people', 'god'];
+const word = ['coat', 'const', 'javascript', 'river', 'lucky', 'statue', 'joke', 'developer', 'angular', 'nightmare', 'application', 'people', 'god', 'waterfall', 'sea', 'shore'];
 
 let words;
 // pick a word to make the api call to datamuse with it
@@ -42,7 +42,7 @@ function pickWord(word) {
 }
 // get words from the datamuse api
 let callDatamuse = async() => {
-        const json = await fetch(`https://api.datamuse.com/words?rel_trg=${pickWord(word)}&max=50`, { mode: 'cors' }).then(response => response.json()).then(data => {
+        const json = await fetch(`https://api.datamuse.com/words?rel_trg=${pickWord(word)}&max=50`, { mode: 'no-cors' }).then(response => response.json()).then(data => {
             words = data.map(function(term) {
                 return term.word;
             });
