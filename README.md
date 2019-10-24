@@ -8,7 +8,7 @@
 
 Execute index.html in a browser
 
-Try it - [WordBeater Game](https://bousbissikouceila.github.io/speedTypingGame "Link to play the Game")
+Try it - [WordBeater Game](https://speedtypegame.netlify.com/ "Link to play the Game")
 
 ## Info
 
