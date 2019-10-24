@@ -30,10 +30,27 @@ seconds.innerHTML = currentLevel;
 highScore.innerHTML = score;
 
 // Words to play with
-const words = ['hat', 'coat', 'const', 'javascript', 'river', 'lucky', 'statue', 'joke', 'developer', 'establishment'];
+const word = ['coat', 'const', 'javascript', 'river', 'lucky', 'statue', 'joke', 'developer', 'angular', 'nightmare', 'application', 'people', 'god'];
 
-// Initilize Game
+let words;
+// pick a word to make the api call to datamuse with it
+function pickWord(word) {
+    // Generate random array index
+    const index = Math.floor(Math.random() * word.length);
+    // Output random word
+    return word[index];
+}
+// get words from the datamuse api
+const callDatamuse = async() => {
+        const json = await fetch(`https://api.datamuse.com/words?rel_trg=${pickWord(word)}`).then(response => response.json()).then(data => {
+            words = data.map(function(term) {
+                return term.word;
+            });
+        });
+    }
+    // Initilize Game
 function init() {
+    callDatamuse();
     // load word from array
     showWord(words);
     // Start matching on word input
@@ -74,9 +91,11 @@ function matchWords() {
         return false;
     }
 }
-
 // Pick & Show random word
 function showWord(words) {
+    if (words === undefined) {
+        words = word;
+    }
     // Generate random array index
     const randIndex = Math.floor(Math.random() * words.length);
     // Output random word
@@ -85,7 +104,7 @@ function showWord(words) {
 
 // Countdown timer
 function countDown() {
-    // Make sure time isn't run out
+    // Make sure time isn't running out
     if (time > 0) {
         // decrement
         time--;
@@ -100,7 +119,8 @@ function countDown() {
 
 // Check game status
 function checkStatus() {
-    if (!isPlaying && time === 0) {
+    if (!isPlaying && time === 0 && score != -1) {
+        callDatamuse();
         message.innerHTML = 'Game Over!!! try again';
         if (highScore.innerHTML < score) {
             highScore.innerHTML = score;
