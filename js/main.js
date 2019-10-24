@@ -41,8 +41,8 @@ function pickWord(word) {
     return word[index];
 }
 // get words from the datamuse api
-const callDatamuse = async() => {
-        const json = await fetch(`https://api.datamuse.com/words?rel_trg=${pickWord(word)}&max=60`).then(response => response.json()).then(data => {
+let callDatamuse = async() => {
+        const json = await fetch(`https://api.datamuse.com/words?rel_trg=${pickWord(word)}&max=50`, { mode: 'cors' }).then(response => response.json()).then(data => {
             words = data.map(function(term) {
                 return term.word;
             });
